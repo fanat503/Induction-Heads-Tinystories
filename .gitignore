@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Данные и чекпоинты
+*.bin
+*.pt
+*.safetensors
+data/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
