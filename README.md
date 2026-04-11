@@ -1,5 +1,7 @@
 # Induction Heads on TinyStories
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fanat503/Induction-Heads-Tinystories/blob/main/induction_heads_tinystories.ipynb)
+
 Training GPT-2 Small from scratch and tracking the formation of 
 Induction Heads throughout training. Verified with a custom 
 Sparse Autoencoder on Layer 6 activations.
