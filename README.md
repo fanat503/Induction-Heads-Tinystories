@@ -2,13 +2,13 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fanat503/Induction-Heads-Tinystories/blob/main/induction_heads_tinystories.ipynb)
 
-Training GPT-2 Small from scratch and tracking the formation of 
-Induction Heads throughout training. Verified with a custom 
+Training GPT-2 Small from scratch and tracking the formation of
+Induction Heads throughout training. Verified with a custom
 Sparse Autoencoder on Layer 6 activations.
 
-**Key finding:** Previous Token Heads form reliably on any dataset. 
-Induction Heads are dataset-dependent — on TinyStories they barely 
-form at all (max score 0.05), because the dataset is too simple 
+**Key finding:** Previous Token Heads form reliably on any dataset.
+Induction Heads are dataset-dependent — on TinyStories they barely
+form at all (max score 0.05), because the dataset is too simple
 to require in-context learning.
 
 ## Results
@@ -28,39 +28,26 @@ to require in-context learning.
 ## Why TinyStories?
 
 To isolate the effect of dataset complexity on mechanistic formation.
-TinyStories is intentionally simple — short texts, basic grammar, 
-low repetition. The hypothesis was that Induction Heads would 
+TinyStories is intentionally simple — short texts, basic grammar,
+low repetition. The hypothesis was that Induction Heads would
 struggle to form. It was confirmed.
 
-Next experiment: TinyStories vs OpenWebText across model sizes 
-(10M → 350M) on TPU. To verify that dataset complexity is the 
+Next experiment: TinyStories vs OpenWebText across model sizes
+(10M → 350M) on TPU. To verify that dataset complexity is the
 key factor.
 
 ## Setup
 
 ```bash
-git clone https://github.com/yourusername/induction-heads-tinystories
-cd induction-heads-tinystories
+git clone https://github.com/fanat503/Induction-Heads-Tinystories
+cd Induction-Heads-Tinystories
 pip install -r requirements.txt
 ```
 
-## Training
+## Usage
 
-```bash
-python train.py
-```
+Open the notebook directly in Colab using the button above
 
-## Compute induction scores on checkpoints
-
-```bash
-python induction_heads.py
-```
-
-## Train SAE on Layer 6
-
-```bash
-python sae.py
-```
 
 ## Architecture
 
@@ -78,10 +65,7 @@ python sae.py
 ## Structure
 
 ```
-gpt2.py             — model architecture
-train.py            — training script
-induction_heads.py  — compute_induction_score, compute_previous_token_score
-sae.py              — SAE architecture + training
+induction_heads_tinystories.ipynb  — full experiment notebook (Colab)
 ```
 
 ## Dataset
